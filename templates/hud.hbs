@@ -1,0 +1,139 @@
+<div class="hc-hud">
+  <section class="hc-clock">
+    <div class="hc-clock-main">
+      <i class="fa-solid {{phase.icon}} hc-phase-icon"></i>
+      <div class="hc-clock-text">
+        <div class="hc-day">Day {{day}} · {{phase.label}}</div>
+        <div class="hc-time">{{time}}{{#unless mode}} · <span class="hc-paused">hexcrawl paused</span>{{/unless}}</div>
+      </div>
+      {{#if initialized}}
+      <div class="hc-clock-weather" data-tooltip="{{weather.label}}"><i class="fa-solid {{weather.icon}}"></i></div>
+      {{/if}}
+    </div>
+    {{#if isGM}}
+    <div class="hc-buttons">
+      <button type="button" class="hc-mode {{#if mode}}active{{/if}}" data-action="toggleMode" data-tooltip="Hexcrawl mode runs the clock, the weather and the travel time">
+        <i class="fa-solid fa-power-off"></i> {{#if mode}}Hexcrawl on{{else}}Hexcrawl off{{/if}}
+      </button>
+      <button type="button" data-action="advanceHour" {{#unless mode}}disabled{{/unless}} data-tooltip="Advance one hour"><i class="fa-solid fa-hourglass-half"></i> +1 hour</button>
+      <button type="button" data-action="advancePhase" {{#unless mode}}disabled{{/unless}} data-tooltip="{{nextTooltip}}"><i class="fa-solid fa-forward-step"></i> {{nextLabel}}</button>
+    </div>
+    {{/if}}
+  </section>
+
+  {{#if tabs}}
+  <nav class="hc-tabs" role="tablist">
+    {{#each tabs}}
+    <button type="button" role="tab" class="hc-tab {{#if active}}active{{/if}}" aria-selected="{{#if active}}true{{else}}false{{/if}}" data-action="hcTab" data-tab="{{id}}">
+      <i class="fa-solid {{icon}}"></i> {{label}}
+    </button>
+    {{/each}}
+  </nav>
+  {{/if}}
+
+  {{!-- ============ Today ============ --}}
+  <section class="hc-panel" data-panel="today" role="tabpanel" {{#unless (eq tab "today")}}hidden{{/unless}}>
+    {{#if initialized}}
+    <div class="hc-headline">
+      <i class="fa-solid {{weather.icon}}"></i>
+      <strong>{{weather.label}}</strong>
+      {{#if trend}}<span class="hc-trend" data-tooltip="Only you see the trend"><i class="fa-solid {{trend.icon}}"></i> {{trend.label}}</span>{{/if}}
+    </div>
+    <div class="hc-effects">{{weather.effect}}</div>
+    <div class="hc-travel">
+      <div class="hc-travel-head">
+        <strong><i class="fa-solid fa-person-hiking"></i> Travel</strong>
+        {{#if travel.auto}}<span class="hc-muted">{{travel.hours}} h on the road today</span>{{/if}}
+      </div>
+      {{#if travel.auto}}
+      <div class="hc-travel-bar" role="img" aria-label="{{travel.hours}} of {{travel.day}} hours travelled today">
+        {{#each travel.segments}}<span class="hc-seg {{#if filled}}filled{{/if}}"></span>{{/each}}
+      </div>
+      <div class="hc-travel-status">{{travel.status}}</div>
+      {{/if}}
+      <div class="hc-meta">Open hex <strong>{{travel.open}} h</strong> · Rough hex <strong>{{travel.rough}} h</strong>{{#if travel.extra}} <span class="hc-extra">({{travel.extra}})</span>{{/if}}</div>
+    </div>
+    {{#if region}}<div class="hc-meta hc-region"><i class="fa-solid {{region.icon}}"></i> {{region.label}}</div>{{/if}}
+    {{else}}
+    <p class="hc-muted">The hexcrawl hasn't started yet.{{#if isGM}} Turn on Hexcrawl mode to roll the starting weather, or set it first in the GM tab.{{/if}}</p>
+    {{/if}}
+  </section>
+
+  {{!-- ============ GM ============ --}}
+  {{#if isGM}}
+  <section class="hc-panel hc-gm" data-panel="gm" role="tabpanel" {{#unless (eq tab "gm")}}hidden{{/unless}}>
+    <div class="hc-forecast">
+      {{#if forecast}}
+      <span>Tomorrow: <i class="fa-solid {{forecast.icon}}"></i> <strong>{{forecast.label}}</strong>, {{forecast.trend}}</span>
+      <button type="button" class="hc-inline" data-action="rerollForecast" data-tooltip="Reroll tomorrow's weather"><i class="fa-solid fa-rotate"></i></button>
+      {{else}}
+      <span class="hc-muted">Tomorrow's weather is rolled at nightfall.</span>
+      <button type="button" class="hc-inline" data-action="rerollForecast" data-tooltip="Roll tomorrow's weather now"><i class="fa-solid fa-dice"></i></button>
+      {{/if}}
+    </div>
+
+    <div class="hc-field">
+      <label>Weather</label>
+      <select name="hcStep">{{selectOptions weatherChoices selected=weatherStep}}</select>
+      <select name="hcTrend">{{selectOptions trendChoices selected=weatherTrend}}</select>
+      <button type="button" class="hc-inline" data-action="setWeather" data-tooltip="Set today's weather"><i class="fa-solid fa-check"></i></button>
+    </div>
+    <div class="hc-field">
+      <label>Region</label>
+      <select data-setting="region" data-tooltip="{{regionSummary}}">{{selectOptions regionChoices selected=regionKey}}</select>
+    </div>
+    <div class="hc-field">
+      <label>Season</label>
+      <select data-setting="season" data-tooltip="In winter, rain falls as snow and storms are blizzards">{{selectOptions seasonChoices selected=season}}</select>
+    </div>
+    <button type="button" data-action="postReport"><i class="fa-solid fa-comment"></i> Post today's conditions to chat</button>
+
+    <h4 class="hc-subhead">This scene</h4>
+    {{#if scene}}
+    <div class="hc-scene-name">{{scene.name}}</div>
+    {{#if scene.hex}}
+    <button type="button" class="hc-mode {{#if scene.enabled}}active{{/if}}" data-action="toggleScene">
+      <i class="fa-solid fa-map"></i> {{#if scene.enabled}}Hexcrawl map: on{{else}}Use as a hexcrawl map{{/if}}
+    </button>
+    {{#if scene.enabled}}
+    {{#if scene.tokenVision}}
+    <div class="hc-alert">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span><strong>Token Vision is on.</strong> Players only see what their token sees, not what the party can see.</span>
+      <button type="button" data-action="fixVision">Turn it off</button>
+    </div>
+    {{/if}}
+    <div class="hc-field">
+      <label>Party</label>
+      <span class="hc-value">{{#if scene.party}}{{scene.party}}{{else}}<em>not set</em>{{/if}}</span>
+      <button type="button" class="hc-inline" data-action="setParty" data-tooltip="Use the selected token as the party"><i class="fa-solid fa-person-hiking"></i></button>
+    </div>
+    <div class="hc-field">
+      <label>Landmarks</label>
+      <span class="hc-value">{{scene.landmarkCount}} <span class="hc-muted">({{scene.discoveredCount}} known)</span></span>
+      <button type="button" class="hc-inline" data-action="pickLandmark" data-tooltip="Click a hex to mark or edit a landmark (or hover and press Shift+L)"><i class="fa-solid fa-tower-observation"></i></button>
+    </div>
+    <div class="hc-field">
+      <label>Rough ground</label>
+      <span class="hc-value">{{scene.roughCount}} hex{{#unless (eq scene.roughCount 1)}}es{{/unless}}</span>
+      <button type="button" class="hc-inline {{#if scene.painting}}hc-on{{/if}}" data-action="paintRough" aria-pressed="{{#if scene.painting}}true{{else}}false{{/if}}" data-tooltip="{{#if scene.painting}}Stop painting (Esc){{else}}Paint rough ground: click or drag over hexes{{/if}}"><i class="fa-solid fa-paintbrush"></i></button>
+    </div>
+    <div class="hc-field">
+      <label>Travel today</label>
+      <span class="hc-value">{{travel.hours}} h</span>
+      <button type="button" class="hc-inline" data-action="resetTravel" data-tooltip="Start today's travel over at 0 hours (the clock stays where it is)"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    </div>
+    <div class="hc-buttons">
+      <button type="button" data-action="refresh"><i class="fa-solid fa-eye"></i> Update sight</button>
+      <button type="button" data-action="resetExplored"><i class="fa-solid fa-eraser"></i> Reset explored</button>
+    </div>
+    {{/if}}
+    {{else}}
+    <p class="hc-warn">This scene doesn't use a hexagonal grid.</p>
+    {{/if}}
+    {{else}}
+    <p class="hc-muted">No scene is open.</p>
+    {{/if}}
+  </section>
+  {{/if}}
+</div>

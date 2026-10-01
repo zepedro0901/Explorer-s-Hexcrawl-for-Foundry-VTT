@@ -1,0 +1,403 @@
+/* ---------- Tracker ---------- */
+
+.explorers-hexcrawl .window-content {
+  padding: 0.6rem 0.75rem 0.75rem;
+}
+
+.explorers-hexcrawl .hc-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.explorers-hexcrawl .hc-hud section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.explorers-hexcrawl .hc-clock-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.explorers-hexcrawl .hc-phase-icon {
+  font-size: 1.6rem;
+  width: 2.2rem;
+  text-align: center;
+}
+
+.explorers-hexcrawl .hc-day {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.explorers-hexcrawl .hc-time,
+.explorers-hexcrawl .hc-muted,
+.explorers-hexcrawl .hc-meta {
+  opacity: 0.8;
+}
+
+.explorers-hexcrawl .hc-paused {
+  font-style: italic;
+}
+
+.explorers-hexcrawl button {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  min-height: 0;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+}
+
+.explorers-hexcrawl .hc-buttons {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.explorers-hexcrawl .hc-buttons button {
+  flex: 1;
+  padding: 0 0.3rem;
+}
+
+.explorers-hexcrawl button.hc-mode.active {
+  background: #2f6b3a;
+  border-color: #2f6b3a;
+  color: #ffffff;
+}
+
+.explorers-hexcrawl button.hc-inline {
+  flex: 0 0 auto;
+  width: 1.9rem;
+  padding: 0;
+}
+
+.explorers-hexcrawl .hc-headline {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.1rem;
+}
+
+.explorers-hexcrawl .hc-trend {
+  margin-left: auto;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.explorers-hexcrawl .hc-effects {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.explorers-hexcrawl dl.hc-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.7rem;
+  margin: 0.1rem 0 0;
+}
+
+.explorers-hexcrawl dl.hc-stats dt {
+  font-weight: 700;
+}
+
+.explorers-hexcrawl dl.hc-stats dd {
+  margin: 0;
+}
+
+.explorers-hexcrawl .hc-travel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.15rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.explorers-hexcrawl .hc-travel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.explorers-hexcrawl .hc-travel-bar {
+  display: flex;
+  gap: 2px;
+  height: 0.7rem;
+}
+
+.explorers-hexcrawl .hc-travel-bar .hc-seg {
+  flex: 1;
+  border-radius: 2px;
+  background: rgba(128, 128, 128, 0.25);
+}
+
+.explorers-hexcrawl .hc-travel-bar .hc-seg.filled {
+  background: #b58a2a;
+}
+
+.explorers-hexcrawl .hc-travel-status {
+  font-weight: 600;
+}
+
+.explorers-hexcrawl .hc-extra {
+  color: #b3701a;
+  font-weight: 600;
+}
+
+.explorers-hexcrawl .hc-region {
+  font-size: 0.75rem;
+}
+
+.explorers-hexcrawl button.hc-inline.hc-on {
+  background: #9a6a2e;
+  border-color: #9a6a2e;
+  color: #ffffff;
+}
+
+.explorers-hexcrawl .hc-clock-weather {
+  margin-left: auto;
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+.explorers-hexcrawl nav.hc-tabs {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+  margin: 0 -0.1rem;
+}
+
+.explorers-hexcrawl nav.hc-tabs button.hc-tab {
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.3rem;
+  opacity: 0.7;
+}
+
+.explorers-hexcrawl nav.hc-tabs button.hc-tab.active {
+  opacity: 1;
+  font-weight: 700;
+  border-bottom-color: #b58a2a;
+}
+
+.explorers-hexcrawl .hc-panel[hidden] {
+  display: none;
+}
+
+.explorers-hexcrawl .hc-forecast,
+.explorers-hexcrawl .hc-field {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.explorers-hexcrawl .hc-forecast span {
+  flex: 1;
+}
+
+.explorers-hexcrawl .hc-field label {
+  flex: 0 0 6.9rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.explorers-hexcrawl .hc-field select {
+  flex: 1;
+  min-width: 0;
+}
+
+.explorers-hexcrawl .hc-field .hc-value {
+  flex: 1;
+}
+
+.explorers-hexcrawl .hc-subhead {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  border-bottom: none;
+}
+
+.explorers-hexcrawl .hc-scene-name {
+  font-weight: 600;
+}
+
+.explorers-hexcrawl .hc-alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #c0392b;
+  border-radius: 4px;
+  background: rgba(192, 57, 43, 0.12);
+  font-size: 0.75rem;
+}
+
+.explorers-hexcrawl .hc-alert span {
+  flex: 1;
+  min-width: 10rem;
+}
+
+.explorers-hexcrawl .hc-warn {
+  color: #c0392b;
+}
+
+/* ---------- Chat cards ---------- */
+
+.explorers-hexcrawl-card header {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.explorers-hexcrawl-card p {
+  margin: 0.25rem 0;
+}
+
+.explorers-hexcrawl-card ul {
+  margin: 0.2rem 0 0.2rem 1rem;
+  padding: 0;
+}
+
+.explorers-hexcrawl-card .hc-card-weather {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1em;
+}
+
+.explorers-hexcrawl-card .hc-card-trend {
+  margin-left: auto;
+  font-size: 0.85em;
+  opacity: 0.85;
+}
+
+.explorers-hexcrawl-card .hc-card-muted {
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
+.explorers-hexcrawl-card .hc-card-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Landmark window: icon grid ---------- */
+
+.explorers-hexcrawl-landmark .form-group.stacked {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+/* The landmark window never grows past the screen: its fields scroll, its buttons stay in view. */
+.explorers-hexcrawl-landmark.application {
+  max-height: 92vh;
+}
+
+.explorers-hexcrawl-landmark .window-content {
+  max-height: calc(92vh - 3rem);
+  overflow-y: auto;
+}
+
+.explorers-hexcrawl-landmark .hc-icon-grid {
+  max-height: 180px;
+}
+
+.explorers-hexcrawl-landmark .form-group[hidden] {
+  display: none;
+}
+
+.explorers-hexcrawl-landmark input[name=hcSight] {
+  flex: 0 0 4.5rem;
+}
+
+.explorers-hexcrawl-landmark .form-group.stacked > label {
+  flex: none;
+}
+
+.explorers-hexcrawl-landmark .hc-icon-grid {
+  width: 100%;
+}
+
+.hc-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.hc-icon-grid .hc-icon-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 2px 4px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hc-icon-grid .hc-icon-tile input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Foundry's map icons are white, so they sit on a dark face in either theme. */
+.hc-icon-grid .hc-icon-face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #24221f;
+  color: #bbb3a3;
+}
+
+.hc-icon-grid .hc-icon-face img {
+  width: 30px;
+  height: 30px;
+  border: none;
+  object-fit: contain;
+}
+
+.hc-icon-grid .hc-icon-name {
+  font-size: 0.68rem;
+  line-height: 1.1;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hc-icon-grid .hc-icon-tile:hover {
+  border-color: rgba(181, 138, 42, 0.5);
+}
+
+.hc-icon-grid .hc-icon-tile:has(input:checked) {
+  border-color: #b58a2a;
+  background: rgba(181, 138, 42, 0.18);
+}
+
+.hc-icon-grid .hc-icon-tile:has(input:focus-visible) {
+  outline: 2px solid #b58a2a;
+  outline-offset: 1px;
+}
+
+.hc-icon-grid .hc-icon-tile:has(input:checked) .hc-icon-face {
+  box-shadow: 0 0 0 2px #b58a2a;
+}

@@ -1,0 +1,17 @@
+{
+  "id": "explorers-hexcrawl",
+  "title": "Explorer's Hexcrawl",
+  "description": "A Hexcrawl mode for your hex maps: moving the party spends travel time, the weather (Clear, Cloudy, Rain, Storm) changes how long a hex takes, and the party discovers points of interest and viewing points as it explores.",
+  "version": "0.6.4",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/hexcrawl.css"
+  ],
+  "socket": true
+}
