@@ -281,18 +281,6 @@ hc.refresh();                      // recalculate what the party sees
 
 ---
 
-## Upgrading from older versions
-
-Your world is converted automatically the first time a GM loads it:
-
-- **Weather:** the old seven kinds are mapped onto four. Clear and Fair become Clear, Overcast and Drizzle become Cloudy, Showers and Rain become Rain, and a Storm stays a Storm.
-- **Removed rules:** fog, mist and temperature are gone.
-- **Landmarks:** they become points of interest. Ones the party had already seen count as discovered.
-
-Back up your world before upgrading, as you would for any module update.
-
----
-
 ## Known limitations
 
 - The region and season apply to the whole world, not to individual hexes.
