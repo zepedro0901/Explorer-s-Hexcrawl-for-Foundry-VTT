@@ -25,9 +25,7 @@ Move the party token and Explorer's Hexcrawl keeps track of the rest. It spends 
 - [Settings](#settings)
 - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Macro API](#macro-api)
-- [Upgrading from older versions](#upgrading-from-older-versions)
 - [Known limitations](#known-limitations)
-- [License and credits](#license-and-credits)
 
 ---
 
