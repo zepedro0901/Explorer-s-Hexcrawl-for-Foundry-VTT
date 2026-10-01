@@ -1,0 +1,1 @@
+# Explorer-s-Hexcrawl-for-Foundry-VTT
