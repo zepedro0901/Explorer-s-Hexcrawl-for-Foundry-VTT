@@ -34,16 +34,16 @@ Move the party token and Explorer's Hexcrawl keeps track of the rest. It spends 
 
 ## Features
 
-- 🥾 **Automatic travel time.** Every hex the party enters moves the clock on: 2 hours for open ground and 4 for rough ground, plus extra hours in rain or storms. You paint the rough hexes once with a brush.
-- ⏳ **Travel limits with GM approval.** The party can't travel at night, past nightfall, or beyond the day's 8 hours. A move that would is stopped, and the GM decides whether to allow it, cut it short or stop it.
-- ↩️ **Real undo.** Ctrl+Z puts the party back, covers the hexes that move revealed, forgets the landmarks it found, and gives back its hours.
-- 🌦️ **Four kinds of weather.** Clear, Cloudy, Rain and Storm. The weather changes at most one step a day, follows an Improving or Worsening trend, and shows on the map: rain, snow, storms with lightning, blizzards and sandstorms.
-- 🗺️ **Fog of war for hexes.** Unexplored hexes are covered, hexes the party has seen stay dimmed, and the hexes around the party are clear.
-- 📍 **Points of interest.** Caves, bridges, lairs, quests and towers are found when the party is next to them, or from further away if you choose. Chat announces each find ("*The Drowned Tower, 3 hexes away to the north-east*"), and it stays on the map from then on.
-- 🏔️ **Viewing points.** From a mountain top or a tall tower, the party sees as far as you decide and finds everything in that area.
-- 🌙 **Day and night.** The weather changes at dawn and the map darkens at nightfall.
-- 🧭 **Regions.** Desert, Marshland, Frozen Wastes and others each change how the weather behaves.
-- 🎲 **Works with any game system.** The few rules it has (one exhaustion save in storms) are written for D&D 5e but are easy to read for any game.
+ **Automatic travel time.** Every hex the party enters moves the clock on: 2 hours for open ground and 4 for rough ground, plus extra hours in rain or storms. You paint the rough hexes once with a brush.
+ **Travel limits with GM approval.** The party can't travel at night, past nightfall, or beyond the day's 8 hours. A move that would is stopped, and the GM decides whether to allow it, cut it short or stop it.
+ **Real undo.** Ctrl+Z puts the party back, covers the hexes that move revealed, forgets the landmarks it found, and gives back its hours.
+ **Four kinds of weather.** Clear, Cloudy, Rain and Storm. The weather changes at most one step a day, follows an Improving or Worsening trend, and shows on the map: rain, snow, storms with lightning, blizzards and sandstorms.
+ **Fog of war for hexes.** Unexplored hexes are covered, hexes the party has seen stay dimmed, and the hexes around the party are clear.
+ **Points of interest.** Caves, bridges, lairs, quests and towers are found when the party is next to them, or from further away if you choose. Chat announces each find ("*The Drowned Tower, 3 hexes away to the north-east*"), and it stays on the map from then on.
+ **Viewing points.** From a mountain top or a tall tower, the party sees as far as you decide and finds everything in that area.
+ **Day and night.** The weather changes at dawn and the map darkens at nightfall.
+ **Regions.** Desert, Marshland, Frozen Wastes and others each change how the weather behaves.
+ **Works with any game system.** The few rules it has (one exhaustion save in storms) are written for D&D 5e but are easy to read for any game.
 
 ---
 
@@ -91,7 +91,7 @@ Move the party token and Explorer's Hexcrawl keeps track of the rest. It spends 
 3. Click **Hexcrawl off** so it reads **Hexcrawl on**.
 4. Move the party. When the day's travel is used up, click **To nightfall**, then **To dawn**.
 
-> 💡 If players should move the party themselves, give them **Owner** permission on the party token's actor.
+>  If players should move the party themselves, give them **Owner** permission on the party token's actor.
 
 ---
 
@@ -157,10 +157,10 @@ The weather only changes how long travel takes. The party always sees the hexes 
 
 | Weather | Travel | Effect |
 |---|---|---|
-| ☀️ Clear | Normal | Good travelling weather. |
-| ☁️ Cloudy | Normal | Grey skies. |
-| 🌧️ Rain | +1 hour per hex | Wet going. |
-| ⛈️ Storm | +2 hours per hex | A night without shelter: DC 10 CON save or 1 level of exhaustion. |
+|  Clear | Normal | Good travelling weather. |
+|  Cloudy | Normal | Grey skies. |
+|  Rain | +1 hour per hex | Wet going. |
+|  Storm | +2 hours per hex | A night without shelter: DC 10 CON save or 1 level of exhaustion. |
 
 **How it changes.** At nightfall, roll 1d6 for tomorrow:
 
@@ -321,13 +321,5 @@ To let people install with a manifest URL:
 4. For each new version, raise `version` and the `download` link in `module.json`, then repeat steps 2 and 3.
 
 ---
-
-## License and credits
-
-<!-- Choose a license (for example MIT) and add a LICENSE file to the repo. -->
-Released under the [MIT License](LICENSE).
-
-The travel and weather rules are adapted from the *Hexcrawl Tables* in **An Explorer's Guide to Hexcrawls**.
-<!-- Credit the book's author and any artists here. -->
 
 Explorer's Hexcrawl is an unofficial module and is not affiliated with Foundry Gaming LLC.
