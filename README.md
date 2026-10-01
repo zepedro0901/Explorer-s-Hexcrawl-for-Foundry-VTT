@@ -160,7 +160,7 @@ The weather only changes how long travel takes. The party always sees the hexes 
 |  Clear | Normal | Good travelling weather. |
 |  Cloudy | Normal | Grey skies. |
 |  Rain | +1 hour per hex | Wet going. |
-|  Storm | +2 hours per hex | A night without shelter: DC 10 CON save or 1 level of exhaustion. |
+|  Storm | +2 hours per hex |Should have stayed at home |
 
 **How it changes.** At nightfall, roll 1d6 for tomorrow:
 
