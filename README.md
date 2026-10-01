@@ -4,7 +4,6 @@
 ![Version](https://img.shields.io/badge/version-0.6.4-blue)
 ![System agnostic](https://img.shields.io/badge/system-any-lightgrey)
 
-**A hexcrawl that runs itself, so your table can get on with exploring.**
 
 Move the party token and Explorer's Hexcrawl keeps track of the rest. It spends travel time, rolls the weather each night, reveals the map hex by hex, and tells everyone when the party finds something worth a closer look. The rules are deliberately light. There are no navigation rolls, temperature bands or pace tables: the party always goes where it means to, and bad weather only slows it down.
 
